@@ -1,0 +1,14 @@
+#cron{
+    height:300px;
+    width: 100%;
+
+}
+
+#display{
+    width:100%;
+    font-size: 62px;
+    text-align: center;
+}
+.buttons{
+    text-align: center;
+}
