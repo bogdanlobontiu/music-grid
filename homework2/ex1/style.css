@@ -1,69 +1,25 @@
-body {
-    font-family:  sans-serif;
-    background: rgb(65, 64, 64);
-    color: white;
-  }
-  
-  .container {
-    margin: 100px auto;
-    margin-top: 220px;
-    width: 400px;
-    text-align: center;
-    position: relative;
-  }
-  
-  .progress2 {
-    border-radius: 30px;
-    background-color: rgb(199, 32, 32);
-  }
-  
-  .progress-bar2 {
-    height: 18px;
-    border-radius: 30px;
-    transition: 0.4s linear;
-    transition-property: width, background-color;
-  }
-  
-  .progress-moved .progress-bar2 {
-    background-color: #01f50d;
-    animation: progress 5s infinite;
-  }
-  
-  @keyframes progress {
-    0% {
-      width: 0%;
-      background: #f9bcca;
-    }
-  
-    100% {
-      width: 100%;
-      background: #0be052;
-      box-shadow: 0 0 60px #f8f8f8;
-    }
-  }
-  
-  
-  
-  
-  .loader {
-    --p: 0;
-    animation: p 5s steps(100) infinite;
-    counter-reset: p var(--p);
-    font-size: 2.1em;
-    position: absolute;
-    bottom: 45px;
-    left: 325px;
-    color: #01f722;
-  }
-  
-  .loader:after {
-    content: counter(p) "%";
-    color: #01f722;
-  }
-  
-  @keyframes p {
-    90%,
-    100% {
-      --p: 100;
-    }
-  }
+/*css pt partea goala a progress bar-ului 
+overflow: hidden, indiferent cat de mare ar fi progress_fill nu iese din din progress */
+.progress {
+  width: 500px;
+  height: 50px;
+  background-color: #ccc;
+  border-radius: 30px;
+  overflow: hidden;
+}
+/* css pt partea plina a progress bar-ului  */
+.progress__fill {
+  margin-top: .3rem;
+  height: 80%;
+  background: coral;
+  border-radius: 30px;
+  box-shadow:0 0 60px rgb(250, 109, 226);
+  animation: progress-animation 7s forwards;
+
+}
+/*  in keyframes specific cum trebuie sa mearga animatia. de la 0 la 100 in cazul acesta  */
+@keyframes progress-animation {
+  0%{width: 0%;}
+  100%{width: 100%;}
+
+}

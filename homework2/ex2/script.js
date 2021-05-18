@@ -1,5 +1,4 @@
 //variabile sa tina datele pentru cronometru
-console.log("alooo");
 let seconds = 0;
 let minutes = 0;
 let hours = 0;
@@ -12,6 +11,8 @@ let interval = null;
 
 //var pentru status cronometru
 let status = "oprit";
+//functia care transforma secundele in minute/ minute in ore. daca una din componente este sub 10
+// facem sa arate un 0 inainte pentru estetica, cica.
 function cronometru() {
     seconds++;
     if (seconds / 60 == 1) {
@@ -43,10 +44,10 @@ function cronometru() {
     else {
         displayHours = hours;
     }
-
+    //schimbam diplay-ul cu datele actuale
     document.getElementById("display").innerHTML = displayHours + ":" + displayMinutes + ":" + displaySeconds;
 }
-
+//functie pentru pornit si oprit
 function startStop() {
     if (status === "oprit") {
         interval = window.setInterval(cronometru, 1000);
@@ -59,6 +60,7 @@ function startStop() {
         status = "oprit"
     }
 }
+//functie pentru reset in care "curatam" intervalul si schimbam valorile la 0 si buton stop devine start
 function reset() {
 
     window.clearInterval(interval);
